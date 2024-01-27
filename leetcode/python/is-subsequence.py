@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 392: Is Subsequence. """
+
+
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
         i = 0

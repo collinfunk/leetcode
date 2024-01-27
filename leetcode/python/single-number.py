@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 136: Single Number. """
+
 from typing import List
 
 

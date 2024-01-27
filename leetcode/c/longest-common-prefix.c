@@ -23,58 +23,61 @@
  * SUCH DAMAGE.
  */
 
-/* Leetcode problem 1: Two Sum. */
+/* Leetcode problem 14: Longest Common Prefix. */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#undef ARRAY_SIZE
-#define ARRAY_SIZE(array) (sizeof (array) / sizeof (array[0]))
-
-static int *twoSum (int *nums, int numsSize, int target, int *returnSize);
+static char *longestCommonPrefix (char **strs, int strsSize);
 
 int
 main (void)
 {
-  int input[] = { 3, 2, 4 };
-  int target = 6;
-  int *result;
-  int result_size;
-
-  result = twoSum (input, ARRAY_SIZE (input), target, &result_size);
-
-  printf ("%d\n", result[0]);
-  printf ("%d\n", result[1]);
-
-  free (result);
-
   return 0;
 }
 
-/* Not sure if you can map 10^9 * 2 bytes of memory on LeetCode... This will do
-   I guess. */
-static int *
-twoSum (int *nums, int numsSize, int target, int *returnSize)
+static char *
+longestCommonPrefix (char **strs, int strsSize)
 {
-  int *result;
-  int i, j;
+  int i = 0;
+  size_t prefix_len = 0;
+  char *ptr;
 
-  result = (int *) calloc (2, sizeof (int));
-  if (result == NULL)
+  /* Input constraints. */
+  if (strsSize < 1 || strsSize > 200)
     abort ();
-  *returnSize = 2;
-  for (i = 0; i < numsSize; ++i)
+
+  /* Base case. */
+  if (strsSize == 1)
+    return strs[0];
+
+  do
     {
-      for (j = i + 1; j < numsSize; ++j)
+      int j = 0;
+      size_t count = 0;
+      while (strs[i][j] == strs[i + 1][j])
         {
-          if (nums[i] + nums[j] == target)
-            {
-              result[0] = i;
-              result[1] = j;
-              return result;
-            }
+          count++;
+          if (strs[i][j] == '\0')
+            break;
+          else
+            j++;
         }
+      if (count == 0)
+        return "";
+      if (prefix_len == 0 || prefix_len > count)
+        prefix_len = count;
+      printf ("%zu\n", prefix_len);
     }
-  return result;
+  while (++i < strsSize - 1);
+
+  if (prefix_len == 0)
+    abort ();
+
+  ptr = malloc (prefix_len + 1);
+  memcpy (ptr, strs[0], prefix_len);
+  ptr[prefix_len] = '\0';
+
+  return ptr;
 }

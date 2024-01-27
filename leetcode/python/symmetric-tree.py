@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 101: Symmetric Tree. """
+
 from typing import Optional
 
 

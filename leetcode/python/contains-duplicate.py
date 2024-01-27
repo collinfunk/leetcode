@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 217: Contains Duplicate. """
+
 from typing import List
 
 

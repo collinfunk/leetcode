@@ -23,65 +23,41 @@
  * SUCH DAMAGE.
  */
 
-/* Leetcode problem 14: Longest Common Prefix. */
+/* Leetcode problem 1: Two Sum. */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-static char *longestCommonPrefix (char **strs, int strsSize);
+static int *twoSum (int *nums, int numsSize, int target, int *returnSize);
 
 int
 main (void)
 {
-  const char *input[] = { "flower", "flow", "flight" };
-
-  printf ("%s\n", longestCommonPrefix ((char **) input, 3));
-
   return 0;
 }
 
-static char *
-longestCommonPrefix (char **strs, int strsSize)
+static int *
+twoSum (int *nums, int numsSize, int target, int *returnSize)
 {
-  int i = 0;
-  size_t prefix_len = 0;
-  char *ptr;
+  int *result;
+  int i, j;
 
-  /* Input constraints. */
-  if (strsSize < 1 || strsSize > 200)
+  result = (int *) calloc (2, sizeof (int));
+  if (result == NULL)
     abort ();
-
-  /* Base case. */
-  if (strsSize == 1)
-    return strs[0];
-
-  do
+  *returnSize = 2;
+  for (i = 0; i < numsSize; ++i)
     {
-      int j = 0;
-      size_t count = 0;
-      while (strs[i][j] == strs[i + 1][j])
+      for (j = i + 1; j < numsSize; ++j)
         {
-          count++;
-          if (strs[i][j] == '\0')
-            break;
-          else
-            j++;
+          if (nums[i] + nums[j] == target)
+            {
+              result[0] = i;
+              result[1] = j;
+              return result;
+            }
         }
-      if (count == 0)
-        return "";
-      if (prefix_len == 0 || prefix_len > count)
-        prefix_len = count;
-      printf ("%zu\n", prefix_len);
     }
-  while (++i < strsSize - 1);
-
-  if (prefix_len == 0)
-    abort ();
-
-  ptr = malloc (prefix_len + 1);
-  memcpy (ptr, strs[0], prefix_len);
-  ptr[prefix_len] = '\0';
-
-  return ptr;
+  return result;
 }

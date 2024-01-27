@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 383: Ransom Note. """
+
 
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:

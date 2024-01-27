@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 205: Isomorphic Strings. """
+
+
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         mapping = dict()

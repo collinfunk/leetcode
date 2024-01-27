@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 104: Maximum Depth of Binary Tree. """
+
 from typing import Optional
 
 

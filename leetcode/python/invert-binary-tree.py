@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 226: Invert Binary Tree. """
+
 from typing import Optional
 
 

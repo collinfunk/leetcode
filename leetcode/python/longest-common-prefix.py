@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 14: Longest Common Prefix. """
+
 from typing import List
 
 

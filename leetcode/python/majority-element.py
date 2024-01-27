@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 169: Majority Element. """
+
 from typing import List
 
 

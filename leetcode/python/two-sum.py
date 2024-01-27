@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" Leetcode problem 1: Two Sum. """
+
 from typing import List
 
 
