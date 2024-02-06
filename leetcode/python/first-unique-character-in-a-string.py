@@ -2,8 +2,6 @@
 
 """ Leetcode problem 49: First Unique Character in a String. """
 
-from typing import List
-
 
 class Solution:
     def firstUniqChar(self, s: str) -> int:

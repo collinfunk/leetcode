@@ -3,6 +3,7 @@
 """ Leetcode problem 53: Maximum Subarray. """
 
 from typing import List
+from math import inf
 
 
 class Solution:
