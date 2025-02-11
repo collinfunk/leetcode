@@ -2,6 +2,7 @@
 
 """ Leetcode problem 345: Reverse Vowels of a String. """
 
+
 class Solution:
     def reverseVowels(self, s: str) -> str:
         vowels = set('AEIOUaeiou')
