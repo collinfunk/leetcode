@@ -4,37 +4,37 @@
  * @param {number[]} nums
  * @return {void}
  */
-var ArrayWrapper = function(nums) {
+var ArrayWrapper = function (nums) {
   this.nums = nums;
 };
 
 /**
  * @return {number}
  */
-ArrayWrapper.prototype.valueOf = function() {
+ArrayWrapper.prototype.valueOf = function () {
   return this.nums.reduce((a, b) => a + b, 0);
-}
+};
 
 /**
  * @return {string}
  */
-ArrayWrapper.prototype.toString = function() {
+ArrayWrapper.prototype.toString = function () {
   if (this.nums.length === 0) {
-    return '[]';
+    return "[]";
   } else if (this.nums.length === 1) {
-    return `[${this.nums[0]}]`
+    return `[${this.nums[0]}]`;
   } else {
-    let result = '[';
+    let result = "[";
     for (let i = 0; i < this.nums.length; ++i) {
       if (i === this.nums.length - 1) {
-        result += `${this.nums[i]}]`
+        result += `${this.nums[i]}]`;
       } else {
-        result += `${this.nums[i]},`
+        result += `${this.nums[i]},`;
       }
     }
     return result;
   }
-}
+};
 
 /**
  * const obj1 = new ArrayWrapper([1,2]);

@@ -1,15 +1,14 @@
-
 /* Leetcode problem 2619: Array Prototype Last. */
 
 /**
  * @return {null|boolean|number|string|Array|Object}
  */
-Array.prototype.last = function() {
-    if (this.length === 0) {
-        return -1;
-    } else {
-        return this.at(this.length - 1);
-    }
+Array.prototype.last = function () {
+  if (this.length === 0) {
+    return -1;
+  } else {
+    return this.at(this.length - 1);
+  }
 };
 
 /**

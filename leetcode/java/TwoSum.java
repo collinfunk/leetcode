@@ -15,8 +15,8 @@ class TwoSum
         int value = nums[i];
         int need = target - value;
         if (table.containsKey (need))
-          return new int[]{table.get (need), i};
-        table.put(value, i);
+          return new int[] { table.get (need), i };
+        table.put (value, i);
       }
 
     return null;
