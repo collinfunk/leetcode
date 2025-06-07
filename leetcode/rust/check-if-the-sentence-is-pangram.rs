@@ -6,7 +6,7 @@ impl Solution {
     pub fn check_if_pangram(sentence: String) -> bool {
         let mut table = [0; 26];
         for character in sentence.as_bytes() {
-            table[(character - ('a' as u8)) as usize] += 1
+            table[(character - b'a') as usize] += 1
         }
         table.iter().filter(|&x| *x == 0).count() == 0
     }

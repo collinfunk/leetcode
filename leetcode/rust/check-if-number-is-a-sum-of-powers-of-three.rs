@@ -11,7 +11,7 @@ impl Solution {
             }
             value /= 3;
         }
-        return true;
+        true
     }
 }
 

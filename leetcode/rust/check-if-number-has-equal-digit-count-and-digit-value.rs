@@ -6,11 +6,11 @@ impl Solution {
     pub fn digit_count(num: String) -> bool {
         let mut table = [0; 10];
         for digit in num.bytes() {
-            let value = digit - '0' as u8;
+            let value = digit - b'0';
             table[value as usize] += 1;
         }
         for (i, digit) in num.bytes().enumerate() {
-            let value = digit - '0' as u8;
+            let value = digit - b'0';
             if table[i] != value {
                 return false;
             }

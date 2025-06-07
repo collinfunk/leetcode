@@ -4,7 +4,7 @@ struct Solution {}
 
 impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
-        if (n == 0) {
+        if n == 0 {
             return true;
         }
         let mut working = flowerbed.clone();
